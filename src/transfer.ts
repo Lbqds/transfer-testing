@@ -8,6 +8,8 @@ function genDestinations(tokenId: string): Destination[][] {
       const address = PrivateKeyWallet.Random(group).address
       return { address, attoAlphAmount: ONE_ALPH / 10n, tokens: [{ id: tokenId, amount: ONE_ALPH }] }
     })
+    // transfer twice to each group
+    allDestinations.push(destinations)
     allDestinations.push(destinations)
   }
   return allDestinations
